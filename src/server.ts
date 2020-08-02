@@ -5,7 +5,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 import typeDefs from './schema';
-// import resolvers from './resolvers';
+import resolvers from './resolvers';
 import context from './context';
 
 import config from './config';
@@ -29,10 +29,10 @@ const main = async () => {
 
   const server = new ApolloServer({
     typeDefs,
-    // resolvers,
+    resolvers,
     context: ({ req, res }) => context({ req, res, client, db }),
-    // mocks: !config.isProd,
-    // mockEntireSchema: false,
+    mocks: !config.isProd,
+    mockEntireSchema: false,
     playground: !config.isProd,
     introspection: !config.isProd,
   });
