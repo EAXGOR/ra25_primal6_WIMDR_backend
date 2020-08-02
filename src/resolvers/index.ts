@@ -6,7 +6,7 @@ import { Emergency } from './custom/emergency';
 import { BaseUser, User, Admin, PriorityUser } from './custom/user';
 // import { Mutation } from './mutation/index';
 // import { Query } from './query/index';
-// import { AnyUser } from './custom/shared';
+import { AnyUser } from './custom/shared';
 
 const resolvers: IResolvers<null, Context> = {
   //   Query,
@@ -18,7 +18,7 @@ const resolvers: IResolvers<null, Context> = {
   User: { ...BaseUser, ...User },
   Admin: { ...BaseUser, ...Admin },
   PriorityUser: { ...BaseUser, ...PriorityUser },
-  //   AnyUser,
+  AnyUser,
 };
 
 export default resolvers;
