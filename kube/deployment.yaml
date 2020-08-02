@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sih-final-backend-deployment
+  labels:
+    name: sih-final-backend-deployment
+    app: sih-final-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: sih-final-backend-pod
+  template:
+    metadata:
+      name: sih-final-backend-pod
+      labels:
+        name: sih-final-backend-pod
+        app: sih-final-backend
+    spec:
+      containers:
+        - name: sih-final-backend
+          image: asia.gcr.io/PROJECT_ID/IMAGE:TAG
