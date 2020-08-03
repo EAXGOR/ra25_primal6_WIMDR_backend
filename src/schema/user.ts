@@ -10,6 +10,7 @@ export default gql`
   type Mutation {
     signup(input: SignUpInput): SignUpResponse
     signin(input: SignInInput): SignInResponse
+    signout: SignOutResponse!
   }
 
   input SignInInput {
@@ -35,6 +36,10 @@ export default gql`
     code: String!
     message: String!
     user: AnyUser!
+  }
+  type SignOutResponse implements MutationResponse {
+    code: String!
+    message: String!
   }
   type SignInResponse implements MutationResponse {
     code: String!
