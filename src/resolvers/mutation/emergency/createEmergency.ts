@@ -122,7 +122,7 @@ export const createEmergency: IFieldResolver<null, Context> = async (_, { input 
       Number(location.latitude),
       Number(location.longitude)
     );
-    if (dist <= 50) return new ObjectID(location.user);
+    if (dist <= 2000) return new ObjectID(location.user);
   });
 
   newEmergency.previousAssignees = matchedLocationUsersIDs;
